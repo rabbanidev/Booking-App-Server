@@ -12,4 +12,5 @@ export type IUser = {
   dob?: string;
   gender?: IGender;
   profileImage?: string;
+  active?: boolean;
 };

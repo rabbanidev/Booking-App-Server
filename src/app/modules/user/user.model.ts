@@ -33,6 +33,10 @@ const userSchema = new Schema<IUser>(
     profileImage: {
       type: String,
     },
+    active: {
+      type: Boolean,
+      default: true,
+    },
   },
   {
     timestamps: true,
