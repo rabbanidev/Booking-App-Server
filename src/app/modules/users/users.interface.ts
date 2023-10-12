@@ -9,7 +9,7 @@ type IUserRole =
   | ENUMS_USER_ROLE.ADMIN
   | ENUMS_USER_ROLE.USER;
 
-export type IUser = {
+export type IAllUser = {
   email: string;
   password: string;
   role: IUserRole;
@@ -18,9 +18,13 @@ export type IUser = {
   // user?: Types.ObjectId;
 };
 
-export type IUserMethods = {
-  userExit(email: string): Promise<Partial<IUser> | null>;
+export type IAllUserMethods = {
+  userExit(email: string): Promise<Partial<IAllUser> | null>;
   matchPassword(textPassword: string, hashPassword: string): Promise<boolean>;
 };
 
-export type UserModel = Model<IUser, Record<string, unknown>, IUserMethods>;
+export type AllUserModel = Model<
+  IAllUser,
+  Record<string, unknown>,
+  IAllUserMethods
+>;

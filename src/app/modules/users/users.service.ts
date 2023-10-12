@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { ISuperAdmin } from '../superAdmin/superAdmin.interface';
-import { IUser } from './users.interface';
+import { IAllUser } from './users.interface';
 import SuperAdmin from '../superAdmin/superAdmin.model';
 import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
@@ -11,8 +11,8 @@ import Admin from '../admin/admin.model';
 
 const createSuperAdmin = async (
   superAdmin: ISuperAdmin,
-  userData: IUser
-): Promise<IUser | null> => {
+  userData: IAllUser
+): Promise<IAllUser | null> => {
   let newUserAllData = null;
 
   const session = await mongoose.startSession();
@@ -64,8 +64,8 @@ const createSuperAdmin = async (
 
 const createAdmin = async (
   admin: IAdmin,
-  userData: IUser
-): Promise<IUser | null> => {
+  userData: IAllUser
+): Promise<IAllUser | null> => {
   let newUserAllData = null;
 
   const session = await mongoose.startSession();

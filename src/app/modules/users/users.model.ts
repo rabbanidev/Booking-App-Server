@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
 import bcrypt from 'bcrypt';
-import { IUser, UserModel } from './users.interface';
+import { AllUserModel, IAllUser } from './users.interface';
 import config from '../../../config';
 
-const usersSchema = new Schema<IUser, UserModel>(
+const allUsersSchema = new Schema<IAllUser, AllUserModel>(
   {
     email: {
       type: String,
@@ -39,10 +39,10 @@ const usersSchema = new Schema<IUser, UserModel>(
 );
 
 // Check is user exit using instance method
-usersSchema.methods.userExit = async function (
+allUsersSchema.methods.userExit = async function (
   email: string
-): Promise<Partial<IUser> | null> {
-  const user = await User.findOne(
+): Promise<Partial<IAllUser> | null> {
+  const user = await AllUser.findOne(
     { email },
     { email: 1, password: 1, role: 1 }
   );
@@ -50,7 +50,7 @@ usersSchema.methods.userExit = async function (
 };
 
 // Check match password using instance method
-usersSchema.methods.matchPassword = async function (
+allUsersSchema.methods.matchPassword = async function (
   textPassword: string,
   hashPassword: string
 ): Promise<boolean> {
@@ -58,7 +58,7 @@ usersSchema.methods.matchPassword = async function (
   return isMatchedPassword;
 };
 
-usersSchema.pre('save', async function (next) {
+allUsersSchema.pre('save', async function (next) {
   // hashing password
   const user = this;
   user.password = await bcrypt.hash(
@@ -69,6 +69,6 @@ usersSchema.pre('save', async function (next) {
   next();
 });
 
-const AllUser = model<IUser, UserModel>('AllUser', usersSchema);
+const AllUser = model<IAllUser, AllUserModel>('AllUser', allUsersSchema);
 
 export default AllUser;
