@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.post(
   '/create-super-admin',
-  // auth(ENUMS_USER_ROLE.SUPER_ADMIN),
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN),
   validateRequest(AllUsersValidation.createSuperAdmin),
   AllUsersController.createSuperAdmin
 );
