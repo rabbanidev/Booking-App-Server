@@ -1,0 +1,108 @@
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:00:05.787Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:00:05.802Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:01:04.406Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:01:04.420Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:01:34.507Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:01:34.522Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:02:06.367Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:02:06.381Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:02:29.370Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:02:29.384Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:03:45.637Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:03:45.650Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:04:42.076Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:04:42.093Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:06:35.951Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:06:35.968Z'
+}
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:07:50.694Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-12T11:07:50.706Z'
+}

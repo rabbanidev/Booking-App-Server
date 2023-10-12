@@ -1,12 +1,12 @@
 import httpStatus from 'http-status';
 import { Request, Response } from 'express';
 import catchAsync from '../../../shared/catchAsync';
-import { UserService } from './user.service';
+import { AllUsersService } from './users.service';
 import sendResponse from '../../../shared/sendResponse';
 
 const createSuperAdmin = catchAsync(async (req: Request, res: Response) => {
   const { superAdmin, ...userData } = req.body;
-  const result = await UserService.createSuperAdmin(superAdmin, userData);
+  const result = await AllUsersService.createSuperAdmin(superAdmin, userData);
 
   sendResponse(res, {
     statusCode: httpStatus.CREATED,
@@ -18,7 +18,7 @@ const createSuperAdmin = catchAsync(async (req: Request, res: Response) => {
 
 const createAdmin = catchAsync(async (req: Request, res: Response) => {
   const { admin, ...userData } = req.body;
-  const result = await UserService.createAdmin(admin, userData);
+  const result = await AllUsersService.createAdmin(admin, userData);
 
   sendResponse(res, {
     statusCode: httpStatus.CREATED,
@@ -28,7 +28,7 @@ const createAdmin = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-export const UserController = {
+export const AllUsersController = {
   createSuperAdmin,
   createAdmin,
 };

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
 import bcrypt from 'bcrypt';
-import { IUser, UserModel } from './user.interface';
+import { IUser, UserModel } from './users.interface';
 import config from '../../../config';
 
 const usersSchema = new Schema<IUser, UserModel>(
@@ -69,6 +69,6 @@ usersSchema.pre('save', async function (next) {
   next();
 });
 
-const User = model<IUser, UserModel>('User', usersSchema);
+const AllUser = model<IUser, UserModel>('AllUser', usersSchema);
 
-export default User;
+export default AllUser;

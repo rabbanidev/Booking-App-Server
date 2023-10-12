@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { ENUMS_USER_ROLE } from '../../../enum/enum';
 import { genders } from '../../../constants/gender';
 
 const createSuperAdmin = z.object({
@@ -46,7 +45,7 @@ const createAdmin = z.object({
   }),
 });
 
-export const UserValidation = {
+export const AllUsersValidation = {
   createSuperAdmin,
   createAdmin,
 };

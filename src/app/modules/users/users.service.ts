@@ -1,11 +1,11 @@
 import mongoose from 'mongoose';
 import { ISuperAdmin } from '../superAdmin/superAdmin.interface';
-import { IUser } from './user.interface';
+import { IUser } from './users.interface';
 import SuperAdmin from '../superAdmin/superAdmin.model';
 import httpStatus from 'http-status';
 import ApiError from '../../../errors/ApiError';
 import { ENUMS_USER_ROLE } from '../../../enum/enum';
-import User from './user.model';
+import AllUser from './users.model';
 import { IAdmin } from '../admin/admin.interface';
 import Admin from '../admin/admin.model';
 
@@ -38,7 +38,7 @@ const createSuperAdmin = async (
       role: ENUMS_USER_ROLE.SUPER_ADMIN,
       superAdmin: newSuperAdmin[0]._id,
     };
-    const newUser = await User.create([userPayload], { session });
+    const newUser = await AllUser.create([userPayload], { session });
     if (!newUser.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create user!');
     }
@@ -53,7 +53,7 @@ const createSuperAdmin = async (
   }
   // Populate all fields
   if (newUserAllData) {
-    newUserAllData = await User.findOne({
+    newUserAllData = await AllUser.findOne({
       email: newUserAllData.email,
     }).populate({
       path: 'superAdmin',
@@ -91,7 +91,7 @@ const createAdmin = async (
       role: ENUMS_USER_ROLE.ADMIN,
       admin: newAdmin[0]._id,
     };
-    const newUser = await User.create([userPayload], { session });
+    const newUser = await AllUser.create([userPayload], { session });
     if (!newUser.length) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create user!');
     }
@@ -106,7 +106,7 @@ const createAdmin = async (
   }
   // Populate all fields
   if (newUserAllData) {
-    newUserAllData = await User.findOne({
+    newUserAllData = await AllUser.findOne({
       email: newUserAllData.email,
     }).populate({
       path: 'admin',
@@ -115,7 +115,7 @@ const createAdmin = async (
   return newUserAllData;
 };
 
-export const UserService = {
+export const AllUsersService = {
   createSuperAdmin,
   createAdmin,
 };
