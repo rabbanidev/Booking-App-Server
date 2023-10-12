@@ -29,6 +29,10 @@ const allUsersSchema = new Schema<IAllUser, AllUserModel>(
       type: Schema.Types.ObjectId,
       ref: 'Admin',
     },
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+    },
   },
   {
     timestamps: true,

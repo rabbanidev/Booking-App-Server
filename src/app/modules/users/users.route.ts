@@ -21,4 +21,24 @@ router.post(
   AllUsersController.createAdmin
 );
 
+router.post(
+  '/create-user',
+  auth(ENUMS_USER_ROLE.ADMIN),
+  validateRequest(AllUsersValidation.createUser),
+  AllUsersController.createUser
+);
+
+router.patch(
+  '/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN),
+  validateRequest(AllUsersValidation.updateUserRole),
+  AllUsersController.updateUserRole
+);
+
+router.get(
+  '/',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN),
+  AllUsersController.getAllUsers
+);
+
 export const AllUsersRoutes = router;

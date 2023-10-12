@@ -34,6 +34,16 @@
             "date": 1697113327420,
             "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-12-10-18-error.log",
             "hash": "3f0fb859a0669d758c9da01d10acf56ec339e7e8c79b9bc1dc1da67acd7323ba"
+        },
+        {
+            "date": 1697115757385,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-12-10-19-error.log",
+            "hash": "1d1b168039f3c0ff836c7bc5558da44b85befff2363f4ed69d4ef41ad65b10e6"
+        },
+        {
+            "date": 1697133804951,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-13-10-00-error.log",
+            "hash": "4e06b387daca55580375b896893d0c0af7d920453d448b341f2259c9c8611031"
         }
     ],
     "hashType": "sha256"

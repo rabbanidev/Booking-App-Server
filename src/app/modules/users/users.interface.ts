@@ -3,6 +3,7 @@ import { Model, Types } from 'mongoose';
 import { ENUMS_USER_ROLE } from '../../../enum/enum';
 import { ISuperAdmin } from '../superAdmin/superAdmin.interface';
 import { IAdmin } from '../admin/admin.interface';
+import { IUser } from '../user/user.interface';
 
 type IUserRole =
   | ENUMS_USER_ROLE.SUPER_ADMIN
@@ -15,7 +16,7 @@ export type IAllUser = {
   role: IUserRole;
   superAdmin?: Types.ObjectId | ISuperAdmin;
   admin?: Types.ObjectId | IAdmin;
-  // user?: Types.ObjectId;
+  user?: Types.ObjectId | IUser;
 };
 
 export type IAllUserMethods = {
@@ -28,3 +29,11 @@ export type AllUserModel = Model<
   Record<string, unknown>,
   IAllUserMethods
 >;
+
+export type IUserResponse = {
+  email: string;
+  role: IUserRole;
+  superAdmin?: Types.ObjectId | ISuperAdmin;
+  admin?: Types.ObjectId | IAdmin;
+  user?: Types.ObjectId | IUser;
+};

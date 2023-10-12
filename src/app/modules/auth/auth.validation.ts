@@ -2,13 +2,13 @@ import { z } from 'zod';
 
 const login = z.object({
   body: z.object({
-    id: z.string({
-      required_error: 'ID is required!',
-      invalid_type_error: 'Invalid ID!',
-    }),
+    email: z
+      .string({
+        required_error: 'Email is required!',
+      })
+      .email({ message: 'Invalid email address!' }),
     password: z.string({
       required_error: 'Password is required!',
-      invalid_type_error: 'Invalid password!',
     }),
   }),
 });
