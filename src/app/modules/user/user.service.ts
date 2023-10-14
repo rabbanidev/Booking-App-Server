@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
-import { ISuperAdmin } from './superAdmin.interface';
 import AllUser from '../users/users.model';
 import ApiError from '../../../errors/ApiError';
 import httpStatus from 'http-status';
-import SuperAdmin from './superAdmin.model';
+import { IUser } from './user.interface';
+import User from './user.model';
 
 const updateProfile = async (
   authUserId: string,
-  payload: Partial<ISuperAdmin>
-): Promise<ISuperAdmin | null> => {
+  payload: Partial<IUser>
+): Promise<IUser | null> => {
   let result = null;
 
   const session = await mongoose.startSession();
@@ -16,26 +16,26 @@ const updateProfile = async (
     session.startTransaction();
 
     // Update (All User Model)
-    const updatedUser = await AllUser.findByIdAndUpdate(
+    const updatedMainUser = await AllUser.findByIdAndUpdate(
       authUserId,
       { $set: { email: payload.email } },
+      { new: true, session }
+    );
+    if (!updatedMainUser?._id) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to update profile!');
+    }
+
+    // Update Super Admin Model
+    const updatedUser = await User.findByIdAndUpdate(
+      updatedMainUser.user,
+      { $set: { ...payload, active: true } },
       { new: true, session }
     );
     if (!updatedUser?._id) {
       throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to update profile!');
     }
 
-    // Update Super Admin Model
-    const updateSuperAdmin = await SuperAdmin.findByIdAndUpdate(
-      updatedUser.superAdmin,
-      { $set: payload },
-      { new: true, session }
-    );
-    if (!updateSuperAdmin?._id) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to update profile!');
-    }
-
-    result = updateSuperAdmin;
+    result = updatedUser;
 
     // Commit transaction and end session
     await session.commitTransaction();
@@ -47,12 +47,12 @@ const updateProfile = async (
   }
 
   if (result) {
-    result = await SuperAdmin.findById(result.id);
+    result = await User.findById(result.id);
   }
 
   return result;
 };
 
-export const SuperAdminService = {
+export const UserService = {
   updateProfile,
 };

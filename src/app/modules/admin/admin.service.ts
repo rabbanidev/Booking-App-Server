@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
-import { ISuperAdmin } from './superAdmin.interface';
 import AllUser from '../users/users.model';
 import ApiError from '../../../errors/ApiError';
 import httpStatus from 'http-status';
-import SuperAdmin from './superAdmin.model';
+import { IAdmin } from './admin.interface';
+import Admin from './admin.model';
 
 const updateProfile = async (
   authUserId: string,
-  payload: Partial<ISuperAdmin>
-): Promise<ISuperAdmin | null> => {
+  payload: Partial<IAdmin>
+): Promise<IAdmin | null> => {
   let result = null;
 
   const session = await mongoose.startSession();
@@ -22,20 +22,20 @@ const updateProfile = async (
       { new: true, session }
     );
     if (!updatedUser?._id) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to update profile!');
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to profile update!');
     }
 
     // Update Super Admin Model
-    const updateSuperAdmin = await SuperAdmin.findByIdAndUpdate(
-      updatedUser.superAdmin,
+    const updatedAdmin = await Admin.findByIdAndUpdate(
+      updatedUser.admin,
       { $set: payload },
       { new: true, session }
     );
-    if (!updateSuperAdmin?._id) {
-      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to update profile!');
+    if (!updatedAdmin?._id) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to profile update!');
     }
 
-    result = updateSuperAdmin;
+    result = updatedAdmin;
 
     // Commit transaction and end session
     await session.commitTransaction();
@@ -47,12 +47,12 @@ const updateProfile = async (
   }
 
   if (result) {
-    result = await SuperAdmin.findById(result.id);
+    result = await Admin.findById(result._id);
   }
 
   return result;
 };
 
-export const SuperAdminService = {
+export const AdminService = {
   updateProfile,
 };
