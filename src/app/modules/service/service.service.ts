@@ -1,9 +1,9 @@
 import { paginationHelpers } from '../../../helper/paginationHelpers';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
-import { serviceSearchableFields } from './serviceManagment.constant';
-import { IService, IServiceFilters } from './serviceManagment.interface';
-import Service from './serviceManagment.model';
+import { serviceSearchableFields } from './service.constant';
+import { IService, IServiceFilters } from './service.interface';
+import Service from './service.model';
 
 const createService = async (payload: IService): Promise<IService | null> => {
   const {

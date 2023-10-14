@@ -1,11 +1,11 @@
 import { Request, Response } from 'express';
 import catchAsync from '../../../shared/catchAsync';
-import { ServiceManagmentService } from './serviceManagment.service';
+import { ServiceManagmentService } from './service.service';
 import sendResponse from '../../../shared/sendResponse';
 import httpStatus from 'http-status';
 import pick from '../../../shared/pick';
 import { paginationFields } from '../../../constants/pagination';
-import { serviceFilterableFields } from './serviceManagment.constant';
+import { serviceFilterableFields } from './service.constant';
 
 const createService = catchAsync(async (req: Request, res: Response) => {
   const result = await ServiceManagmentService.createService(req.body);

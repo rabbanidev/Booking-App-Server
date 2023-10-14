@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
-import { IService } from './serviceManagment.interface';
+import { IService } from './service.interface';
 
 const serviceSchema = new Schema<IService>(
   {

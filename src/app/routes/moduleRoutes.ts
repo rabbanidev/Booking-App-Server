@@ -1,6 +1,6 @@
 import { IRoute } from '../../interfaces/route';
 import { AuthRoutes } from '../modules/auth/auth.route';
-import { ServiceManagmentRoutes } from '../modules/serviceManagment/serviceManagment.route';
+import { ServiceManagmentRoutes } from '../modules/service/service.route';
 import { UserManagementRoutes } from '../modules/userManagment/userManagment.route';
 import { AllUsersRoutes } from '../modules/users/users.route';
 

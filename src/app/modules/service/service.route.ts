@@ -2,8 +2,8 @@ import express from 'express';
 import auth from '../../middlewares/auth';
 import { ENUMS_USER_ROLE } from '../../../enum/enum';
 import validateRequest from '../../middlewares/validateRequestHandler';
-import { ServiceManagmentValidation } from './serviceManagment.validation';
-import { ServiceManagmentController } from './serviceManagment.controller';
+import { ServiceManagmentValidation } from './service.validation';
+import { ServiceManagmentController } from './service.controller';
 
 const router = express.Router();
 
