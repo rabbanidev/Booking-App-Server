@@ -16,4 +16,4 @@ export type IUser = {
   active?: boolean;
 };
 
-export type UserModel = Model<IUser, Record<string, string>>;
+export type UserModel = Model<IUser, Record<string, unknown>>;

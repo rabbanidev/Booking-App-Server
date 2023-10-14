@@ -16,7 +16,7 @@ export type IService = {
   numOfReviews?: number;
 };
 
-export type ServiceModel = Model<IService, Record<string, string>>;
+export type ServiceModel = Model<IService, Record<string, unknown>>;
 
 export type IServiceFilters = {
   searchTerm?: string;

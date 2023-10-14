@@ -1,9 +1,13 @@
 import { Schema, model } from 'mongoose';
-import { IFAQ, FAQModel } from './FAQ.interface';
+import { IBlog, BlogModel } from './blog.interface';
 
-const FAQSchema = new Schema<IFAQ, FAQModel>(
+const blogSchema = new Schema<IBlog, BlogModel>(
   {
     title: {
+      type: String,
+      required: true,
+    },
+    image: {
       type: String,
       required: true,
     },
@@ -20,4 +24,4 @@ const FAQSchema = new Schema<IFAQ, FAQModel>(
   }
 );
 
-export const FAQ = model<IFAQ, FAQModel>('FAQ', FAQSchema);
+export const Blog = model<IBlog, BlogModel>('Blog', blogSchema);

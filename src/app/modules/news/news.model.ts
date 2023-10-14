@@ -1,9 +1,13 @@
 import { Schema, model } from 'mongoose';
-import { IFAQ, FAQModel } from './FAQ.interface';
+import { INews, NewsModel } from './news.interface';
 
-const FAQSchema = new Schema<IFAQ, FAQModel>(
+const newsSchema = new Schema<INews, NewsModel>(
   {
     title: {
+      type: String,
+      required: true,
+    },
+    image: {
       type: String,
       required: true,
     },
@@ -20,4 +24,4 @@ const FAQSchema = new Schema<IFAQ, FAQModel>(
   }
 );
 
-export const FAQ = model<IFAQ, FAQModel>('FAQ', FAQSchema);
+export const News = model<INews, NewsModel>('News', newsSchema);

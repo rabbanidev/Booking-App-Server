@@ -15,4 +15,4 @@ export type IAdmin = {
   profileImage?: string;
 };
 
-export type AdminModel = Model<IAdmin, Record<string, string>>;
+export type AdminModel = Model<IAdmin, Record<string, unknown>>;

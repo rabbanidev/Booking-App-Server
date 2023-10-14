@@ -12,4 +12,4 @@ export type ISuperAdmin = {
   profileImage?: string;
 };
 
-export type SuperAdminModel = Model<ISuperAdmin, Record<string, string>>;
+export type SuperAdminModel = Model<ISuperAdmin, Record<string, unknown>>;
