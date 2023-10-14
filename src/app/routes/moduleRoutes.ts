@@ -1,5 +1,6 @@
 import { IRoute } from '../../interfaces/route';
 import { AuthRoutes } from '../modules/auth/auth.route';
+import { ServiceManagmentRoutes } from '../modules/serviceManagment/serviceManagment.route';
 import { UserManagementRoutes } from '../modules/userManagment/userManagment.route';
 import { AllUsersRoutes } from '../modules/users/users.route';
 
@@ -15,6 +16,10 @@ const modulesRoutes: IRoute[] = [
   {
     path: '/user-managments',
     route: UserManagementRoutes,
+  },
+  {
+    path: '/services',
+    route: ServiceManagmentRoutes,
   },
 ];
 
