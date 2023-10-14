@@ -1,3 +1,5 @@
+import { Model } from 'mongoose';
+
 type IName = {
   firstName: string;
   lastName: string;
@@ -9,3 +11,5 @@ export type ISuperAdmin = {
   contactNo?: string;
   profileImage?: string;
 };
+
+export type SuperAdminModel = Model<ISuperAdmin, Record<string, string>>;

@@ -74,6 +74,16 @@
             "date": 1697277067323,
             "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-15-success.log",
             "hash": "80a1712ef0af52bb29638b9d5963e40a18fe0ee3021c8d9ab5a3bfe77829e9f2"
+        },
+        {
+            "date": 1697277603470,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-16-success.log",
+            "hash": "c87cf1b32bf0fc462d7faf7301ec9b63bcbbd7123fd1a6d02d240118fc517296"
+        },
+        {
+            "date": 1697285081246,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-18-success.log",
+            "hash": "dd03fbf4353dd88a5ad306905f05298aacbd06400606435e665892dced25d823"
         }
     ],
     "hashType": "sha256"

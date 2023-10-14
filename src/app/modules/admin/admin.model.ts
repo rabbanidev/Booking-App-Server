@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
-import { IAdmin } from './admin.interface';
+import { AdminModel, IAdmin } from './admin.interface';
 import { genders } from '../../../constants/gender';
 
-const adminSchema = new Schema<IAdmin>(
+const adminSchema = new Schema<IAdmin, AdminModel>(
   {
     name: {
       firstName: {
@@ -42,6 +42,6 @@ const adminSchema = new Schema<IAdmin>(
   }
 );
 
-const Admin = model<IAdmin>('Admin', adminSchema);
+const Admin = model<IAdmin, AdminModel>('Admin', adminSchema);
 
 export default Admin;

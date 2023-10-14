@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
-import { ISuperAdmin } from './superAdmin.interface';
+import { ISuperAdmin, SuperAdminModel } from './superAdmin.interface';
 
-const superAdminSchema = new Schema<ISuperAdmin>(
+const superAdminSchema = new Schema<ISuperAdmin, SuperAdminModel>(
   {
     name: {
       firstName: {
@@ -33,6 +33,9 @@ const superAdminSchema = new Schema<ISuperAdmin>(
   }
 );
 
-const SuperAdmin = model<ISuperAdmin>('SuperAdmin', superAdminSchema);
+const SuperAdmin = model<ISuperAdmin, SuperAdminModel>(
+  'SuperAdmin',
+  superAdminSchema
+);
 
 export default SuperAdmin;

@@ -1,3 +1,5 @@
+import { Model } from 'mongoose';
+
 export type IService = {
   name: string;
   category: string;
@@ -13,6 +15,8 @@ export type IService = {
   rating?: number;
   numOfReviews?: number;
 };
+
+export type ServiceModel = Model<IService, Record<string, string>>;
 
 export type IServiceFilters = {
   searchTerm?: string;

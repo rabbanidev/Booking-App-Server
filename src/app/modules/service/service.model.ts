@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
-import { IService } from './service.interface';
+import { IService, ServiceModel } from './service.interface';
 
-const serviceSchema = new Schema<IService>(
+const serviceSchema = new Schema<IService, ServiceModel>(
   {
     name: {
       type: String,
@@ -58,6 +58,6 @@ const serviceSchema = new Schema<IService>(
   }
 );
 
-const Service = model<IService>('Service', serviceSchema);
+const Service = model<IService, ServiceModel>('Service', serviceSchema);
 
 export default Service;

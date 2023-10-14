@@ -1,3 +1,4 @@
+import { Model } from 'mongoose';
 import { IGender } from '../../../interfaces/gender';
 
 type IName = {
@@ -14,3 +15,5 @@ export type IUser = {
   profileImage?: string;
   active?: boolean;
 };
+
+export type UserModel = Model<IUser, Record<string, string>>;

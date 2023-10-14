@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-this-alias */
 import { Schema, model } from 'mongoose';
 import { genders } from '../../../constants/gender';
-import { IUser } from './user.interface';
+import { IUser, UserModel } from './user.interface';
 
-const userSchema = new Schema<IUser>(
+const userSchema = new Schema<IUser, UserModel>(
   {
     name: {
       firstName: {
@@ -46,6 +46,6 @@ const userSchema = new Schema<IUser>(
   }
 );
 
-const User = model<IUser>('User', userSchema);
+const User = model<IUser, UserModel>('User', userSchema);
 
 export default User;
