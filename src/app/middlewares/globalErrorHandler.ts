@@ -13,7 +13,7 @@ import handleCastError from '../../errors/handleCastError';
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   if (config.node_env === 'development') {
-    console.log('Global Error Handler', error);
+    // console.log('Global Error Handler', error);
   } else {
     errorLogger.error('Global Error Handler', error?.errors);
   }

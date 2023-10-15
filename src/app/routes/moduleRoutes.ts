@@ -3,6 +3,7 @@ import { FAQRoutes } from '../modules/FAQ/FAQ.route';
 import { AdminRoutes } from '../modules/admin/admin.route';
 import { AuthRoutes } from '../modules/auth/auth.route';
 import { BlogRoutes } from '../modules/blog/blog.route';
+import { BookingRoutes } from '../modules/booking/booking.route';
 import { CartRoutes } from '../modules/cart/cart.route';
 import { NewsRoutes } from '../modules/news/news.route';
 import { ServiceManagmentRoutes } from '../modules/service/service.route';
@@ -55,6 +56,10 @@ const modulesRoutes: IRoute[] = [
   {
     path: '/carts',
     route: CartRoutes,
+  },
+  {
+    path: '/bookings',
+    route: BookingRoutes,
   },
 ];
 
