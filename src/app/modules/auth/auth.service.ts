@@ -81,9 +81,7 @@ const refreshToken = async (
 
   // Check user exit in database
   const { userId } = verifyToken as JwtPayload;
-  const user = new AllUser();
-  const userExit = await user.userExit(userId);
-
+  const userExit = await AllUser.findById(userId);
   if (!userExit) {
     throw new ApiError(httpStatus.NOT_FOUND, 'User not found!');
   }

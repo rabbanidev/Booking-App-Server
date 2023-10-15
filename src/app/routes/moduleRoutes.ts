@@ -3,6 +3,7 @@ import { FAQRoutes } from '../modules/FAQ/FAQ.route';
 import { AdminRoutes } from '../modules/admin/admin.route';
 import { AuthRoutes } from '../modules/auth/auth.route';
 import { BlogRoutes } from '../modules/blog/blog.route';
+import { CartRoutes } from '../modules/cart/cart.route';
 import { NewsRoutes } from '../modules/news/news.route';
 import { ServiceManagmentRoutes } from '../modules/service/service.route';
 import { SuperAdminRoutes } from '../modules/superAdmin/superAdmin.route';
@@ -50,6 +51,10 @@ const modulesRoutes: IRoute[] = [
   {
     path: '/news',
     route: NewsRoutes,
+  },
+  {
+    path: '/carts',
+    route: CartRoutes,
   },
 ];
 
