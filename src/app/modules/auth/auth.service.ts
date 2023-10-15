@@ -9,6 +9,11 @@ import {
 import { jwtHelpers } from '../../../helper/jwtHelpers';
 import config from '../../../config';
 import { JwtPayload, Secret } from 'jsonwebtoken';
+import { IUser } from '../user/user.interface';
+import { IAllUser } from '../users/users.interface';
+import mongoose from 'mongoose';
+import User from '../user/user.model';
+import { ENUMS_USER_ROLE } from '../../../enum/enum';
 
 const login = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
   const { email, password } = payload;
@@ -100,7 +105,84 @@ const refreshToken = async (
   };
 };
 
+const register = async (
+  user: IUser,
+  othersData: IAllUser
+): Promise<ILoginUserResponse> => {
+  const allUser = new AllUser(); // instance method
+  const userExit = await allUser.userExit(othersData.email);
+
+  if (userExit) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'User already registered!');
+  }
+
+  let newUserAllData = null;
+  const session = await mongoose.startSession();
+  try {
+    session.startTransaction();
+    // Create user
+    const userPayload = {
+      ...user,
+      email: othersData.email,
+    };
+    const newUser = await User.create([userPayload], {
+      session,
+    });
+    if (!newUser.length) {
+      throw new ApiError(
+        httpStatus.INTERNAL_SERVER_ERROR,
+        'Failed to create user!'
+      );
+    }
+    // Create a new user for all users model
+    const mainUserPayload = {
+      ...othersData,
+      role: ENUMS_USER_ROLE.USER,
+      user: newUser[0]._id,
+    };
+    const mainUserresult = await AllUser.create([mainUserPayload], { session });
+    if (!mainUserresult.length) {
+      throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create user!');
+    }
+    newUserAllData = mainUserresult[0];
+
+    // Commit transaction and end session
+    await session.commitTransaction();
+    await session.endSession();
+  } catch (error) {
+    await session.abortTransaction();
+    await session.endSession();
+    throw error;
+  }
+
+  //   Generate access token & refresh token
+  const { _id: userId, role } = newUserAllData;
+  const accessToken = jwtHelpers.generateToken(
+    {
+      userId,
+      role,
+    },
+    config.jwt.access_secret as Secret,
+    config.jwt.access_expires_in as string
+  );
+
+  const refreshToken = jwtHelpers.generateToken(
+    {
+      userId,
+      role,
+    },
+    config.jwt.refress_secret as Secret,
+    config.jwt.refress_expires_in as string
+  );
+
+  return {
+    accessToken,
+    refreshToken,
+  };
+};
+
 export const AuthService = {
   login,
   refreshToken,
+  register,
 };

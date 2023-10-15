@@ -17,4 +17,10 @@ router.post(
   AuthController.refreshToken
 );
 
+router.post(
+  '/register',
+  validateRequest(AuthValidation.register),
+  AuthController.register
+);
+
 export const AuthRoutes = router;

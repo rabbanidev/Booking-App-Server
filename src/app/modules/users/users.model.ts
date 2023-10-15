@@ -50,6 +50,7 @@ allUsersSchema.methods.userExit = async function (
     { email },
     { email: 1, password: 1, role: 1 }
   );
+
   return user;
 };
 
