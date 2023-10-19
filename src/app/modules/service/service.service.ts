@@ -69,10 +69,16 @@ const getServices = async (
   }
 
   // min and max price implemenation
-  if (minPrice || maxPrice) {
+  if (minPrice) {
     andConditions.push({
       price: {
         $gte: minPrice || 0,
+      },
+    });
+  }
+  if (maxPrice) {
+    andConditions.push({
+      price: {
         $lte: maxPrice || Infinity,
       },
     });

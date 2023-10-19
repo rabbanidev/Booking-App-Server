@@ -50,6 +50,7 @@ const getServices = catchAsync(async (req: Request, res: Response) => {
     filtersData,
     paginationOptions
   );
+
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,

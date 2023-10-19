@@ -20,6 +20,8 @@ router.delete(
   CartController.removeFromCart
 );
 
+router.get('/:id', auth(ENUMS_USER_ROLE.USER), CartController.singleCartItem);
+
 router.get('/', auth(ENUMS_USER_ROLE.USER), CartController.myCarts);
 
 export const CartRoutes = router;

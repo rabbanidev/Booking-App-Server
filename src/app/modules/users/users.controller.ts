@@ -62,10 +62,34 @@ const updateUserRole = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const myInfo = catchAsync(async (req: Request, res: Response) => {
+  const result = await AllUsersService.myInfo(req.user);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'My info fetched successfully!',
+    data: result,
+  });
+});
+
+const updateMyProfile = catchAsync(async (req: Request, res: Response) => {
+  const result = await AllUsersService.updateMyProfile(req.user, req.body);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Profile updated successfully!',
+    data: result,
+  });
+});
+
 export const AllUsersController = {
   createSuperAdmin,
   createAdmin,
   createUser,
   getAllUsers,
   updateUserRole,
+  myInfo,
+  updateMyProfile,
 };

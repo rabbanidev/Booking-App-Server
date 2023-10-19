@@ -60,8 +60,14 @@ const removeFromCart = async (id: string): Promise<ICart | null> => {
   return result;
 };
 
+const singleCartItem = async (id: string): Promise<ICart | null> => {
+  const result = await Cart.findById(id);
+  return result;
+};
+
 export const CartService = {
   addToCart,
   myCarts,
   removeFromCart,
+  singleCartItem,
 };

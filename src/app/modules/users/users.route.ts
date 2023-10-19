@@ -29,10 +29,31 @@ router.post(
 );
 
 router.patch(
+  '/update-profile',
+  auth(
+    ENUMS_USER_ROLE.SUPER_ADMIN,
+    ENUMS_USER_ROLE.ADMIN,
+    ENUMS_USER_ROLE.USER
+  ),
+  validateRequest(AllUsersValidation.updateMyProfile),
+  AllUsersController.updateMyProfile
+);
+
+router.patch(
   '/:id',
   auth(ENUMS_USER_ROLE.SUPER_ADMIN),
   validateRequest(AllUsersValidation.updateUserRole),
   AllUsersController.updateUserRole
+);
+
+router.get(
+  '/my-info',
+  auth(
+    ENUMS_USER_ROLE.SUPER_ADMIN,
+    ENUMS_USER_ROLE.ADMIN,
+    ENUMS_USER_ROLE.USER
+  ),
+  AllUsersController.myInfo
 );
 
 router.get(

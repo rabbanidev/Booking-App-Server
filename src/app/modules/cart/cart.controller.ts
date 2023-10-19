@@ -8,7 +8,7 @@ const addToCart = catchAsync(async (req: Request, res: Response) => {
   const result = await CartService.addToCart(req.user.userId, req.body);
 
   sendResponse(res, {
-    statusCode: httpStatus.OK,
+    statusCode: httpStatus.CREATED,
     success: true,
     message: 'Service added to cart successfully!',
     data: result,
@@ -21,7 +21,7 @@ const myCarts = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Service fetched to cart successfully!',
+    message: 'Cart items fteched successfully!',
     data: result,
   });
 });
@@ -32,7 +32,18 @@ const removeFromCart = catchAsync(async (req: Request, res: Response) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Service remove from cart successfully!',
+    message: 'Cart item delete successfully!',
+    data: result,
+  });
+});
+
+const singleCartItem = catchAsync(async (req: Request, res: Response) => {
+  const result = await CartService.singleCartItem(req.params.id);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Cart item fetched successfully!',
     data: result,
   });
 });
@@ -41,4 +52,5 @@ export const CartController = {
   addToCart,
   myCarts,
   removeFromCart,
+  singleCartItem,
 };
