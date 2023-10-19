@@ -286,6 +286,108 @@ const updateMyProfile = async (
   return result;
 };
 
+const getAllNormalUsers = async (): Promise<IUserResponse[]> => {
+  const result = await AllUser.find({ role: ENUMS_USER_ROLE.USER }).populate(
+    ENUMS_USER_ROLE.USER
+  );
+  return result;
+};
+
+const updateUserByAuthority = async (
+  userId: string,
+  payload: Partial<IAllUser>
+) => {
+  const exitUser = await AllUser.findById(userId);
+  if (!exitUser) {
+    throw new ApiError(httpStatus.NOT_FOUND, 'User not found!');
+  }
+
+  let result = null;
+  const session = await mongoose.startSession();
+  try {
+    session.startTransaction();
+
+    let updatedUser = null;
+    if (exitUser.role === ENUMS_USER_ROLE.USER) {
+      updatedUser = await User.findByIdAndUpdate(exitUser.user, payload, {
+        new: true,
+        session,
+      });
+    } else if (exitUser.role === ENUMS_USER_ROLE.ADMIN) {
+      updatedUser = await Admin.findByIdAndUpdate(exitUser.user, payload, {
+        new: true,
+        session,
+      });
+    }
+
+    if (!updatedUser) {
+      throw new ApiError(
+        httpStatus.INTERNAL_SERVER_ERROR,
+        'Failed to update user!'
+      );
+    }
+
+    // Updated Main USer
+    const updatedMainUser = await AllUser.findByIdAndUpdate(
+      exitUser._id,
+      { $set: { email: payload.email } },
+      {
+        new: true,
+        session,
+      }
+    );
+
+    if (!updatedMainUser) {
+      throw new ApiError(
+        httpStatus.INTERNAL_SERVER_ERROR,
+        'Failed to update user!'
+      );
+    }
+
+    // Set updated user in result variable
+    result = updatedMainUser;
+
+    // Commit transaction and end session
+    await session.commitTransaction();
+    await session.endSession();
+  } catch (error) {
+    await session.abortTransaction();
+    await session.endSession();
+    throw error;
+  }
+
+  if (result) {
+    result = await AllUser.findOne({ email: result.email }).populate('user');
+  }
+
+  return result;
+};
+
+const singleUser = async (id: string): Promise<IAllUser | null> => {
+  const result = await AllUser.findById(id).populate([
+    'admin',
+    'superAdmin',
+    'user',
+  ]);
+  return result;
+};
+
+const manageEnableUser = async (id: string): Promise<IUser | null> => {
+  const exitUser = await User.findById(id, { active: 1 }).lean();
+
+  const result = await User.findByIdAndUpdate(
+    id,
+    {
+      $set: {
+        active: !exitUser?.active,
+      },
+    },
+    { new: true }
+  );
+
+  return result;
+};
+
 export const AllUsersService = {
   createSuperAdmin,
   createAdmin,
@@ -294,4 +396,8 @@ export const AllUsersService = {
   updateUserRole,
   myInfo,
   updateMyProfile,
+  getAllNormalUsers,
+  updateUserByAuthority,
+  singleUser,
+  manageEnableUser,
 };

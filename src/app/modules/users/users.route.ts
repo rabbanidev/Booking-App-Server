@@ -40,6 +40,19 @@ router.patch(
 );
 
 router.patch(
+  '/update-user-info/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  validateRequest(AllUsersValidation.updateUserByAuthority),
+  AllUsersController.updateUserByAuthority
+);
+
+router.patch(
+  '/enable-user/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  AllUsersController.manageEnableUser
+);
+
+router.patch(
   '/:id',
   auth(ENUMS_USER_ROLE.SUPER_ADMIN),
   validateRequest(AllUsersValidation.updateUserRole),
@@ -57,9 +70,21 @@ router.get(
 );
 
 router.get(
+  '/normal-users',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  AllUsersController.getAllNormalUsers
+);
+
+router.get(
   '/',
   auth(ENUMS_USER_ROLE.SUPER_ADMIN),
   AllUsersController.getAllUsers
+);
+
+router.get(
+  '/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  AllUsersController.singleUser
 );
 
 export const AllUsersRoutes = router;

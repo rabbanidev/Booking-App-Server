@@ -84,6 +84,55 @@ const updateMyProfile = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+const getAllNormalUsers = catchAsync(async (req: Request, res: Response) => {
+  const result = await AllUsersService.getAllNormalUsers();
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'All users fetched successfully!',
+    data: result,
+  });
+});
+
+const updateUserByAuthority = catchAsync(
+  async (req: Request, res: Response) => {
+    const result = await AllUsersService.updateUserByAuthority(
+      req.params.id,
+      req.body
+    );
+
+    sendResponse(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'User updated successfully!',
+      data: result,
+    });
+  }
+);
+
+const singleUser = catchAsync(async (req: Request, res: Response) => {
+  const result = await AllUsersService.singleUser(req.params.id);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User fetched successfully!',
+    data: result,
+  });
+});
+
+const manageEnableUser = catchAsync(async (req: Request, res: Response) => {
+  const result = await AllUsersService.manageEnableUser(req.params.id);
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'User enable successfully!',
+    data: result,
+  });
+});
+
 export const AllUsersController = {
   createSuperAdmin,
   createAdmin,
@@ -92,4 +141,8 @@ export const AllUsersController = {
   updateUserRole,
   myInfo,
   updateMyProfile,
+  getAllNormalUsers,
+  updateUserByAuthority,
+  singleUser,
+  manageEnableUser,
 };

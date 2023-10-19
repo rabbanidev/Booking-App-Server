@@ -274,6 +274,11 @@
             "date": 1697753322863,
             "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-20-10-04-error.log",
             "hash": "351aa1206b2f29edd69f314a7d4f11603326907222cbd90a4b5336ed18c17d27"
+        },
+        {
+            "date": 1697756531476,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-20-10-05-error.log",
+            "hash": "2ade508275d73177737f13ea861a8fc1f5ac4b2f963a7dc27e2bb13488bad666"
         }
     ],
     "hashType": "sha256"
