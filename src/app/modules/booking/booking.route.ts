@@ -14,4 +14,16 @@ router.post(
   BookingController.createBooking
 );
 
+router.patch(
+  '/cancel/:id',
+  auth(ENUMS_USER_ROLE.USER),
+  BookingController.cancelBooking
+);
+
+router.get(
+  '/my-booking',
+  auth(ENUMS_USER_ROLE.USER),
+  BookingController.getMyBookings
+);
+
 export const BookingRoutes = router;

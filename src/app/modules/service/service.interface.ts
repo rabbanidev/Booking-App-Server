@@ -9,7 +9,6 @@ export type IService = {
   description: string;
   image: string;
   isUpcoming?: boolean;
-  // rooms:[]
   facilities?: string[];
 
   rating?: number;
