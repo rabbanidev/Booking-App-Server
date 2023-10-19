@@ -91,8 +91,112 @@ const getMyBookings = async (
   };
 };
 
+const getBokings = async (
+  paginationOptions: IPaginationOptions
+): Promise<IGenericResponse<IBooking[]>> => {
+  // pagination options
+  const { page, limit, skip, sortConditions } =
+    paginationHelpers.calculatePagination(paginationOptions);
+
+  const result = await Booking.find({})
+    .populate([
+      {
+        path: 'user',
+        populate: {
+          path: 'user',
+        },
+      },
+      {
+        path: 'service',
+      },
+    ])
+    .sort(sortConditions)
+    .skip(skip)
+    .limit(limit);
+
+  //   total documents
+  const total = await Booking.countDocuments({});
+
+  return {
+    meta: {
+      page,
+      limit,
+      total,
+    },
+    data: result,
+  };
+};
+
+const acceptBooking = async (bookingId: string): Promise<IBooking | null> => {
+  const exitBooking = await Booking.findById(bookingId);
+
+  if (!exitBooking) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Booking not found!');
+  }
+
+  if (exitBooking.status === 'cancelled') {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Already boking cancelled!');
+  }
+
+  exitBooking.status = 'accepted';
+
+  await exitBooking.save();
+
+  return exitBooking;
+};
+
+const rejectedBooking = async (bookingId: string): Promise<IBooking | null> => {
+  const exitBooking = await Booking.findById(bookingId);
+
+  if (!exitBooking) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Booking not found!');
+  }
+
+  exitBooking.status = 'rejected';
+
+  await exitBooking.save();
+
+  return exitBooking;
+};
+
+const adjustSchedules = async (
+  bookingId: string,
+  payload: { checkIn: Date; checkOut: Date }
+): Promise<IBooking | null> => {
+  const exitBooking = await Booking.findById(bookingId);
+
+  if (!exitBooking) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Booking not found!');
+  }
+  if (exitBooking.status === 'cancelled') {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Already boking cancelled!');
+  }
+  // if (exitBooking.status === 'rejected') {
+  //   throw new ApiError(httpStatus.BAD_REQUEST, 'Already boking rejected!');
+  // }
+
+  exitBooking.checkIn = payload.checkIn;
+  exitBooking.checkOut = payload.checkOut;
+  exitBooking.status = 'adjust schedule';
+
+  await exitBooking.save();
+
+  return exitBooking;
+};
+
+const getBooking = async (bookingId: string): Promise<IBooking | null> => {
+  const result = await Booking.findById(bookingId);
+
+  return result;
+};
+
 export const BookingService = {
   createBooking,
   cancelBooking,
   getMyBookings,
+  getBokings,
+  acceptBooking,
+  rejectedBooking,
+  adjustSchedules,
+  getBooking,
 };

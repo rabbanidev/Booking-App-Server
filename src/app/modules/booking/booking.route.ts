@@ -20,10 +20,45 @@ router.patch(
   BookingController.cancelBooking
 );
 
+router.patch(
+  '/accept/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  BookingController.acceptBooking
+);
+
+router.patch(
+  '/reject/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  BookingController.rejectedBooking
+);
+
+router.patch(
+  '/adjust-schedule/:id',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  validateRequest(BookingValidation.adjustSchedules),
+  BookingController.adjustSchedules
+);
+
 router.get(
   '/my-booking',
   auth(ENUMS_USER_ROLE.USER),
   BookingController.getMyBookings
+);
+
+router.get(
+  '/',
+  auth(ENUMS_USER_ROLE.SUPER_ADMIN, ENUMS_USER_ROLE.ADMIN),
+  BookingController.getBokings
+);
+
+router.get(
+  '/:id',
+  auth(
+    ENUMS_USER_ROLE.SUPER_ADMIN,
+    ENUMS_USER_ROLE.ADMIN,
+    ENUMS_USER_ROLE.USER
+  ),
+  BookingController.getBooking
 );
 
 export const BookingRoutes = router;

@@ -219,11 +219,27 @@ const updateMyProfile = async (
   try {
     session.startTransaction();
 
-    // Update user (User Model)
-    const updatedUser = await User.findByIdAndUpdate(exitUser.user, payload, {
-      new: true,
-      session,
-    });
+    let updatedUser = null;
+    if (authUser.role === ENUMS_USER_ROLE.USER) {
+      updatedUser = await User.findByIdAndUpdate(exitUser.user, payload, {
+        new: true,
+        session,
+      });
+    } else if (authUser.role === ENUMS_USER_ROLE.ADMIN) {
+      updatedUser = await Admin.findByIdAndUpdate(exitUser.admin, payload, {
+        new: true,
+        session,
+      });
+    } else {
+      updatedUser = await SuperAdmin.findByIdAndUpdate(
+        exitUser.superAdmin,
+        payload,
+        {
+          new: true,
+          session,
+        }
+      );
+    }
 
     if (!updatedUser) {
       throw new ApiError(

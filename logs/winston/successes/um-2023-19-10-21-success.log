@@ -10,3 +10,15 @@
   label: 'Booking App',
   timestamp: '2023-10-19T15:04:24.249Z'
 }
+{
+  message: '📋 Database connected successfully',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-19T15:06:36.769Z'
+}
+{
+  message: 'Application listening on port 4000',
+  level: 'info',
+  label: 'Booking App',
+  timestamp: '2023-10-19T15:06:36.780Z'
+}

@@ -25,22 +25,22 @@ const createBooking = z.object({
         { required_error: 'Customer is required!' }
       ),
     })
-    // .refine(
-    //   ({ checkIn }) => {
-    //     return new Date(checkIn) > new Date();
-    //   },
-    //   {
-    //     message: 'Check in date is invalid!',
-    //   }
-    // )
-    // .refine(
-    //   ({ checkOut }) => {
-    //     return new Date(checkOut) > new Date();
-    //   },
-    //   {
-    //     message: 'Check out date is invalid!',
-    //   }
-    // )
+    .refine(
+      ({ checkIn, checkOut }) => {
+        return new Date(checkIn) < new Date(checkOut);
+      },
+      {
+        message: 'Check in date must be before the check out date',
+      }
+    ),
+});
+
+const adjustSchedules = z.object({
+  body: z
+    .object({
+      checkIn: iso8601Date,
+      checkOut: iso8601Date,
+    })
     .refine(
       ({ checkIn, checkOut }) => {
         return new Date(checkIn) < new Date(checkOut);
@@ -53,4 +53,5 @@ const createBooking = z.object({
 
 export const BookingValidation = {
   createBooking,
+  adjustSchedules,
 };
