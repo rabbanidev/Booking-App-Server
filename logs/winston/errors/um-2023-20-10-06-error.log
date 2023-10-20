@@ -6,7 +6,7 @@
   port: 4000,
   level: 'error',
   label: 'Booking App',
-  timestamp: '2023-10-19T23:36:54.653Z'
+  timestamp: '2023-10-20T00:00:07.155Z'
 }
 {
   code: 'EADDRINUSE',
@@ -16,7 +16,7 @@
   port: 4000,
   level: 'error',
   label: 'Booking App',
-  timestamp: '2023-10-19T23:49:41.624Z'
+  timestamp: '2023-10-20T00:02:18.054Z'
 }
 {
   code: 'EADDRINUSE',
@@ -26,5 +26,15 @@
   port: 4000,
   level: 'error',
   label: 'Booking App',
-  timestamp: '2023-10-19T23:59:52.933Z'
+  timestamp: '2023-10-20T00:02:46.146Z'
+}
+{
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 4000,
+  level: 'error',
+  label: 'Booking App',
+  timestamp: '2023-10-20T00:02:58.041Z'
 }

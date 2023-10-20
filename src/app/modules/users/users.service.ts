@@ -173,7 +173,9 @@ const createUser = async (
 };
 
 const getAllUsers = async (): Promise<IUserResponse[]> => {
-  const result = await AllUser.find().populate(['superAdmin', 'admin', 'user']);
+  const result = await AllUser.find()
+    .populate(['superAdmin', 'admin', 'user'])
+    .sort({ createdAt: -1 });
   return result;
 };
 
@@ -200,7 +202,7 @@ const updateUserRole = async (
 
 const myInfo = async (authUser: JwtPayload): Promise<IAllUser | null> => {
   const result = await AllUser.findById(authUser.userId).populate(
-    authUser.role
+    authUser.role === ENUMS_USER_ROLE.SUPER_ADMIN ? 'superAdmin' : authUser.role
   );
   return result;
 };
@@ -279,7 +281,7 @@ const updateMyProfile = async (
 
   if (result) {
     result = await AllUser.findOne({ email: result.email }).populate(
-      result.role
+      result.role === ENUMS_USER_ROLE.SUPER_ADMIN ? 'superAdmin' : result.role
     );
   }
 
