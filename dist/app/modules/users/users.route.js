@@ -1,0 +1,25 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AllUsersRoutes = void 0;
+const express_1 = __importDefault(require("express"));
+const users_controller_1 = require("./users.controller");
+const auth_1 = __importDefault(require("../../middlewares/auth"));
+const enum_1 = require("../../../enum/enum");
+const validateRequestHandler_1 = __importDefault(require("../../middlewares/validateRequestHandler"));
+const users_validation_1 = require("./users.validation");
+const router = express_1.default.Router();
+router.post('/create-super-admin', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN), (0, validateRequestHandler_1.default)(users_validation_1.AllUsersValidation.createSuperAdmin), users_controller_1.AllUsersController.createSuperAdmin);
+router.post('/create-admin', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN), (0, validateRequestHandler_1.default)(users_validation_1.AllUsersValidation.createAdmin), users_controller_1.AllUsersController.createAdmin);
+router.post('/create-user', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.ADMIN), (0, validateRequestHandler_1.default)(users_validation_1.AllUsersValidation.createUser), users_controller_1.AllUsersController.createUser);
+router.patch('/update-profile', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN, enum_1.ENUMS_USER_ROLE.USER), (0, validateRequestHandler_1.default)(users_validation_1.AllUsersValidation.updateMyProfile), users_controller_1.AllUsersController.updateMyProfile);
+router.patch('/update-user-info/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), (0, validateRequestHandler_1.default)(users_validation_1.AllUsersValidation.updateUserByAuthority), users_controller_1.AllUsersController.updateUserByAuthority);
+router.patch('/enable-user/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), users_controller_1.AllUsersController.manageEnableUser);
+router.patch('/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN), (0, validateRequestHandler_1.default)(users_validation_1.AllUsersValidation.updateUserRole), users_controller_1.AllUsersController.updateUserRole);
+router.get('/my-info', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN, enum_1.ENUMS_USER_ROLE.USER), users_controller_1.AllUsersController.myInfo);
+router.get('/normal-users', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), users_controller_1.AllUsersController.getAllNormalUsers);
+router.get('/', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN), users_controller_1.AllUsersController.getAllUsers);
+router.get('/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), users_controller_1.AllUsersController.singleUser);
+exports.AllUsersRoutes = router;

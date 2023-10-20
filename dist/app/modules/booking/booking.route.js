@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BookingRoutes = void 0;
+const express_1 = __importDefault(require("express"));
+const auth_1 = __importDefault(require("../../middlewares/auth"));
+const enum_1 = require("../../../enum/enum");
+const validateRequestHandler_1 = __importDefault(require("../../middlewares/validateRequestHandler"));
+const booking_validation_1 = require("./booking.validation");
+const booking_controller_1 = require("./booking.controller");
+const router = express_1.default.Router();
+router.post('/', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.USER), (0, validateRequestHandler_1.default)(booking_validation_1.BookingValidation.createBooking), booking_controller_1.BookingController.createBooking);
+router.patch('/cancel/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.USER), booking_controller_1.BookingController.cancelBooking);
+router.patch('/accept/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), booking_controller_1.BookingController.acceptBooking);
+router.patch('/reject/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), booking_controller_1.BookingController.rejectedBooking);
+router.patch('/adjust-schedule/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), (0, validateRequestHandler_1.default)(booking_validation_1.BookingValidation.adjustSchedules), booking_controller_1.BookingController.adjustSchedules);
+router.get('/my-booking', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.USER), booking_controller_1.BookingController.getMyBookings);
+router.get('/', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN), booking_controller_1.BookingController.getBokings);
+router.get('/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.SUPER_ADMIN, enum_1.ENUMS_USER_ROLE.ADMIN, enum_1.ENUMS_USER_ROLE.USER), booking_controller_1.BookingController.getBooking);
+exports.BookingRoutes = router;
