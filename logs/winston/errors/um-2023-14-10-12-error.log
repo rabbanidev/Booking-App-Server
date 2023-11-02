@@ -1,6 +1,0 @@
-{
-  message: 'Database connection failed: Error: querySrv ETIMEOUT _mongodb._tcp.cluster0.oqb8vtg.mongodb.net',
-  level: 'error',
-  label: 'Booking App',
-  timestamp: '2023-10-14T06:34:24.264Z'
-}

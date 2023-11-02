@@ -33,7 +33,7 @@ const serviceSchema = new Schema<IService, ServiceModel>(
       required: true,
     },
     isUpcoming: {
-      type: String,
+      type: Boolean,
       default: false,
     },
     facilities: [

@@ -6,226 +6,6 @@
     "auditLog": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\.f76b49443081851cd6023e8c916e5c43a3519814-audit.json",
     "files": [
         {
-            "date": 1697085173272,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-10-success.log",
-            "hash": "db8850d24a9582e063e857bbdea7b108c3720720f83c302fd382b859ac569628"
-        },
-        {
-            "date": 1697090579742,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-12-success.log",
-            "hash": "c9de34f307be50a5fbf29425e189f1ae4f67a95cf15b58ac7927e425f807df65"
-        },
-        {
-            "date": 1697094995916,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-13-success.log",
-            "hash": "40728f536410073304fe83b1888d66c828e2839d5993c4101d0fd2338aa47ee3"
-        },
-        {
-            "date": 1697108286780,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-16-success.log",
-            "hash": "97a266809d34fe496fcc4bd07a0bc849b9d453357e7171c11f20326bfd66a20b"
-        },
-        {
-            "date": 1697108403334,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-17-success.log",
-            "hash": "762000cbd0a0b30616771d328d17cf49ee06d997207f1eb0b776d71f57e7f8c7"
-        },
-        {
-            "date": 1697113327409,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-18-success.log",
-            "hash": "18b3c813f647a6f39d04f4beddc342d175b81537d1ff6057e091d5040bdf5070"
-        },
-        {
-            "date": 1697115757376,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-12-10-19-success.log",
-            "hash": "9d8e2fd76b211ce6d377845509ade12f8ab3146b427bfc43d93a1b46d68a1c1e"
-        },
-        {
-            "date": 1697133804945,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-13-10-00-success.log",
-            "hash": "e8b7ce7e465d0b3b7e52896a226ddf9fbf0fa0c8850e6a99eac420f77cb5a0dc"
-        },
-        {
-            "date": 1697137340173,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-13-10-01-success.log",
-            "hash": "8d6f33da5c1ab44530517eb74754bbb67e084393de37b92ad7c628dcdbeee1fd"
-        },
-        {
-            "date": 1697170967490,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-13-10-10-success.log",
-            "hash": "4f03d76d1a5220737a5b42920134f584663ac34d21bc9327ef3a5f178acd862a"
-        },
-        {
-            "date": 1697205040938,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-13-10-19-success.log",
-            "hash": "9fc402c4340584f12dfcb3d1783c1003a4a8169d0e20ce33d7bcf02722e7b7e7"
-        },
-        {
-            "date": 1697263259026,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-12-success.log",
-            "hash": "256090c87f8232282a6f4373a3d084e3098287f4e075f5944b9e7d536675139c"
-        },
-        {
-            "date": 1697267142967,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-13-success.log",
-            "hash": "5a4ed29dc47e5824df693856641fedc0d081ff03a8b9a878047c0db46e101a6f"
-        },
-        {
-            "date": 1697277067323,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-15-success.log",
-            "hash": "80a1712ef0af52bb29638b9d5963e40a18fe0ee3021c8d9ab5a3bfe77829e9f2"
-        },
-        {
-            "date": 1697277603470,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-16-success.log",
-            "hash": "c87cf1b32bf0fc462d7faf7301ec9b63bcbbd7123fd1a6d02d240118fc517296"
-        },
-        {
-            "date": 1697285081246,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-18-success.log",
-            "hash": "dd03fbf4353dd88a5ad306905f05298aacbd06400606435e665892dced25d823"
-        },
-        {
-            "date": 1697289518267,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-19-success.log",
-            "hash": "ef8c8800d9676be1532ddc6d7f1f058998bea8e85aba1479431c72c7f78d132e"
-        },
-        {
-            "date": 1697292062399,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-14-10-20-success.log",
-            "hash": "ef415a342d2d5359516c480b26dee3fdf722a9f91c04fe5c9f68d65ac40e7338"
-        },
-        {
-            "date": 1697307082048,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-00-success.log",
-            "hash": "2a707ca2ce07c47b9202763446c5e31c529d248314c34142d9abd7a9be26d0b1"
-        },
-        {
-            "date": 1697345896154,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-10-success.log",
-            "hash": "349bab6c8a8d85024c494673e3135d81b272b63d36f73b7574b7d67abc5cc01d"
-        },
-        {
-            "date": 1697346065429,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-11-success.log",
-            "hash": "075d21ef16753775316008850eac4dfc7e0e2b47f34ec5f112009dfb3f20d96c"
-        },
-        {
-            "date": 1697350128386,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-12-success.log",
-            "hash": "85d53947977f7a09c91d4a728e33e7370a0f4fea217327ff86af7267d359470a"
-        },
-        {
-            "date": 1697353258425,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-13-success.log",
-            "hash": "a5dd17c4f3205ba5326ebe93a0bc2f21fc08b4ad30899128923d17034d69653d"
-        },
-        {
-            "date": 1697364098968,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-16-success.log",
-            "hash": "974c2f8405e5974ec5b2f0eefbeb1617f5a72e1a358988fcde5bcf004f94a1fa"
-        },
-        {
-            "date": 1697369783587,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-17-success.log",
-            "hash": "bdf03b935e88c991fa659df0d04754ce393fffe325d043b1541ebd2817d3527b"
-        },
-        {
-            "date": 1697372720886,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-18-success.log",
-            "hash": "641f41555f92c08645870d6dcd001c1c618f4b6fbcb6df56989ca7a1f9c9080a"
-        },
-        {
-            "date": 1697374863430,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-19-success.log",
-            "hash": "790e603ed4b04020311539417f4e1771aba2c0dd1403fc34130406e1bfa41ccb"
-        },
-        {
-            "date": 1697378400016,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-15-10-20-success.log",
-            "hash": "8e1049d74663188dd90a3101e096a71eb5361e445bc6e8522af45fd3c0d6d91b"
-        },
-        {
-            "date": 1697465491617,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-16-10-20-success.log",
-            "hash": "12b4a165fc265e00650c981461e3788b4939ace460d8d59a244f32f744d749d9"
-        },
-        {
-            "date": 1697468482276,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-16-10-21-success.log",
-            "hash": "e15aae48df704aa454bd6e5c88c46d7f5edf5b3d73318f4054eb42a6dbb46bcb"
-        },
-        {
-            "date": 1697480481401,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-17-10-00-success.log",
-            "hash": "0a6f0a8c7d5a816617a516bbe933109d1c5a5ac047dee1716e2d286030e83586"
-        },
-        {
-            "date": 1697521670534,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-17-10-11-success.log",
-            "hash": "141710e287c11f84a73a049e6b81b0843d9633b228e51b2c4b26a67367c22091"
-        },
-        {
-            "date": 1697529963212,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-17-10-14-success.log",
-            "hash": "393805c8f74ace9651a8fb7a17bfb6fc922d629cea01cccc6ab04c2f5952d63f"
-        },
-        {
-            "date": 1697534920982,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-17-10-15-success.log",
-            "hash": "89e867bf0d6c7d13dd2761ef8ab37ebb2a6287e6fd8a3cf4bab1e53e4be69fdf"
-        },
-        {
-            "date": 1697552455460,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-17-10-20-success.log",
-            "hash": "b4c6ceb903a694b7bf2a8e1e301d7a097109c30a1439fdbd5bb2c771b7a81ddf"
-        },
-        {
-            "date": 1697591811469,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-18-10-07-success.log",
-            "hash": "8e6a35e565b89bc5e2e4e3137076826d0c5af2fca6a3c70a3c4279a35489e52c"
-        },
-        {
-            "date": 1697606534005,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-18-10-11-success.log",
-            "hash": "020782c5702b5a8fd1f5da2fdbd303f556d75e378135cd56ece80d27e2b48a39"
-        },
-        {
-            "date": 1697608815069,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-18-10-12-success.log",
-            "hash": "09a55a897a5ad35cd8c89c97c34e173b9dca62043e4a802319eded1b1825bd0c"
-        },
-        {
-            "date": 1697613553836,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-18-10-13-success.log",
-            "hash": "99aa7bd6270213e201515d2987415952082c2407d0607310ea6dbb1d918679d2"
-        },
-        {
-            "date": 1697636943583,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-18-10-19-success.log",
-            "hash": "db12ec66cdedbcecf03e009ce44b49ec0ec62de15012d46a7e3e6ed3f57629fe"
-        },
-        {
-            "date": 1697648812413,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-18-10-23-success.log",
-            "hash": "125122376fa4f1ab7cc426cdee14333e212055c676907c1b88534da8801e6692"
-        },
-        {
-            "date": 1697654110398,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-19-10-00-success.log",
-            "hash": "66cd6e5d140b2d8d1be67dac721824a157acd32fed633d928540508d4b72fd56"
-        },
-        {
-            "date": 1697657740281,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-19-10-01-success.log",
-            "hash": "db53f50c6158255eebc4adab6c28d65a02065070c3c0d875cb12374d8af77a54"
-        },
-        {
-            "date": 1697681051973,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-19-10-08-success.log",
-            "hash": "471e02cc4aebe3305c34713e014f9278102f7edc20c08b875ee0c7e5f5eca569"
-        },
-        {
             "date": 1697710385699,
             "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-19-10-16-success.log",
             "hash": "c61535f9a35462f3836c6a8a5f78eb89d8e62684d4975335084a138acd189fe4"
@@ -289,6 +69,26 @@
             "date": 1697764338677,
             "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-20-10-07-success.log",
             "hash": "7199b71728853760f3ee29d1467c5635ba488c845d1778c2f7298e40aefe011b"
+        },
+        {
+            "date": 1698886795851,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-02-11-06-success.log",
+            "hash": "3a6a36271c777093bcf2cdab5df08e8bb65613c8e62a9fdfae53cfdef04dee0e"
+        },
+        {
+            "date": 1698886807185,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-02-11-07-success.log",
+            "hash": "16b4b482a4d97831240e3d3f4ff1a5fd1652b2db4c9e7c98c092726917cdc5a5"
+        },
+        {
+            "date": 1698892710369,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-02-11-08-success.log",
+            "hash": "f352f1f9a0f28af9f7df7516e4c2aec41ba7f95ad9b1d0ce46bad71730f94aa4"
+        },
+        {
+            "date": 1698918013682,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\successes\\um-2023-02-11-15-success.log",
+            "hash": "91585b63bae079ba7e0361915eb20d58dd1dcb9ffc1f773ee750d591b0539aa2"
         }
     ],
     "hashType": "sha256"
