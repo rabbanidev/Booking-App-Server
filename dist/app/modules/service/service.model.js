@@ -32,7 +32,7 @@ const serviceSchema = new mongoose_1.Schema({
         required: true,
     },
     isUpcoming: {
-        type: String,
+        type: Boolean,
         default: false,
     },
     facilities: [

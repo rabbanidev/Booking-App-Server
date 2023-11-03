@@ -14,6 +14,6 @@ const router = express_1.default.Router();
 router.post('/', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.ADMIN), (0, validateRequestHandler_1.default)(news_validation_1.NewsValidation.createNews), news_controller_1.NewsController.createNews);
 router.patch('/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.ADMIN), (0, validateRequestHandler_1.default)(news_validation_1.NewsValidation.updateNews), news_controller_1.NewsController.updateNews);
 router.delete('/:id', (0, auth_1.default)(enum_1.ENUMS_USER_ROLE.ADMIN), news_controller_1.NewsController.deleteNews);
-router.get('/:id', news_controller_1.NewsController.getNewses);
-router.get('/', news_controller_1.NewsController.getNews);
+router.get('/:id', news_controller_1.NewsController.getNews);
+router.get('/', news_controller_1.NewsController.getNewses);
 exports.NewsRoutes = router;

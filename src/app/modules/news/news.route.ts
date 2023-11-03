@@ -23,8 +23,8 @@ router.patch(
 
 router.delete('/:id', auth(ENUMS_USER_ROLE.ADMIN), NewsController.deleteNews);
 
-router.get('/:id', NewsController.getNewses);
+router.get('/:id', NewsController.getNews);
 
-router.get('/', NewsController.getNews);
+router.get('/', NewsController.getNewses);
 
 export const NewsRoutes = router;
