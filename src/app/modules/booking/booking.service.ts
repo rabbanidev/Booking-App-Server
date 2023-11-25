@@ -15,6 +15,18 @@ const createBooking = async (authUserId: string, payload: IBooking) => {
     throw new ApiError(httpStatus.BAD_REQUEST, 'Max size overloaded!');
   }
 
+  const exitingBooking = await Booking.find({
+    service: payload.service,
+    checkOut: { $gte: new Date(payload.checkIn).toISOString() },
+  });
+
+  // console.log(new Date(payload.checkIn).toISOString());
+  // console.log(exitingBooking);
+
+  if (exitingBooking.length > 0) {
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Already booked this service.');
+  }
+
   const createObj = { ...payload, user: authUserId };
   const result = await Booking.create(createObj);
   return result;

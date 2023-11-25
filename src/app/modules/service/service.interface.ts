@@ -11,6 +11,8 @@ export type IService = {
   isUpcoming?: boolean;
   facilities?: string[];
 
+  // isAvailable?: boolean;
+
   rating?: number;
   numOfReviews?: number;
 };

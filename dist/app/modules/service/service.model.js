@@ -40,6 +40,10 @@ const serviceSchema = new mongoose_1.Schema({
             type: String,
         },
     ],
+    // isAvailable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
     rating: {
         type: Number,
         min: 1,

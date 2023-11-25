@@ -24,6 +24,15 @@ const createBooking = (authUserId, payload) => __awaiter(void 0, void 0, void 0,
     if (service && (service === null || service === void 0 ? void 0 : service.maxSize) < payload.totalPerson) {
         throw new ApiError_1.default(http_status_1.default.BAD_REQUEST, 'Max size overloaded!');
     }
+    const exitingBooking = yield booking_model_1.Booking.find({
+        service: payload.service,
+        checkOut: { $gte: new Date(payload.checkIn).toISOString() },
+    });
+    // console.log(new Date(payload.checkIn).toISOString());
+    // console.log(exitingBooking);
+    if (exitingBooking.length > 0) {
+        throw new ApiError_1.default(http_status_1.default.BAD_REQUEST, 'Already booked this service.');
+    }
     const createObj = Object.assign(Object.assign({}, payload), { user: authUserId });
     const result = yield booking_model_1.Booking.create(createObj);
     return result;

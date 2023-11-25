@@ -32,7 +32,11 @@ const createService = async (payload: IService): Promise<IService | null> => {
   }
   if (isUpcoming) {
     createObj.isUpcoming = true;
+    // createObj.isAvailable = false;
   }
+  // else {
+  //   createObj.isAvailable = true;
+  // }
 
   const result = await Service.create(payload);
   return result;

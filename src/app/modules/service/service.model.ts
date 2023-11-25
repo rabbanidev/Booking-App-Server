@@ -41,6 +41,12 @@ const serviceSchema = new Schema<IService, ServiceModel>(
         type: String,
       },
     ],
+
+    // isAvailable: {
+    //   type: Boolean,
+    //   default: true,
+    // },
+
     rating: {
       type: Number,
       min: 1,

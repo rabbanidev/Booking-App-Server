@@ -43,7 +43,11 @@ const createService = (payload) => __awaiter(void 0, void 0, void 0, function* (
     }
     if (isUpcoming) {
         createObj.isUpcoming = true;
+        // createObj.isAvailable = false;
     }
+    // else {
+    //   createObj.isAvailable = true;
+    // }
     const result = yield service_model_1.default.create(payload);
     return result;
 });

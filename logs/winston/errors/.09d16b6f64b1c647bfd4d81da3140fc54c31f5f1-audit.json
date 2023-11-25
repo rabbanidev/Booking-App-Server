@@ -6,39 +6,39 @@
     "auditLog": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\.09d16b6f64b1c647bfd4d81da3140fc54c31f5f1-audit.json",
     "files": [
         {
-            "date": 1698886795952,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-02-11-06-error.log",
-            "hash": "c49dacec388a8f6e90d6ad4d251f5c28741205f2e5863330ec454928406d842b"
+            "date": 1700707773420,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-23-11-08-error.log",
+            "hash": "0477998db3cfb103159a73b1f73efb67a5146f92865140188041d91514dad733"
         },
         {
-            "date": 1698887694811,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-02-11-07-error.log",
-            "hash": "e356733f0179106406d53a5a772fc4ba33b5ef0a4d718ab405bdcaa22559171c"
+            "date": 1700820848600,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-24-11-16-error.log",
+            "hash": "a29b2467124ecac68a4eade60e595bde5ba4a6d6e9451540c42be9cf0e85405e"
         },
         {
-            "date": 1698892710378,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-02-11-08-error.log",
-            "hash": "3438040bc40d8f856a7ac604ff9e6271e17b1468a3267fdd82b19e815dcd260b"
+            "date": 1700889043243,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-25-11-11-error.log",
+            "hash": "90a4476e312622521310247a96b350ee4ded9cacaa67677808d79d16bddc66d0"
         },
         {
-            "date": 1698918013696,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-02-11-15-error.log",
-            "hash": "732f5ac7393dad1b9c62192e7ca38b9ee0761223eeda4528abbc756c802057b2"
+            "date": 1700893221293,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-25-11-12-error.log",
+            "hash": "887aa47dc4e58bfa3a920c35c1d07bb5928050dd609b78abbd9263fdeb05fb16"
         },
         {
-            "date": 1698933346891,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-02-11-19-error.log",
-            "hash": "0b8f5f4dc1c8d53db7470917831e1edf0bf12f8cf9bce7d2f491eaef47959102"
+            "date": 1700896179087,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-25-11-13-error.log",
+            "hash": "cb26cb9983be4667fb08001dbd08648c904622ec863b389a865433178eb15c5e"
         },
         {
-            "date": 1698976117845,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-03-11-07-error.log",
-            "hash": "dde65a18add5dba8c5de9704cbb996ae9d1006ecaa8c8c8934509eebc7e630e1"
+            "date": 1700908379075,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-25-11-16-error.log",
+            "hash": "e35e931ffac4f40ed946114e4eddc1d7bc9a4ad2951410fa7fb02be3436adb8e"
         },
         {
-            "date": 1698991032162,
-            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-03-11-11-error.log",
-            "hash": "03da31952960e425a186f0c18385e7b1ad36f54413078c555adc41b32637105b"
+            "date": 1700910041356,
+            "name": "E:\\Web Application\\Next Level\\Assignment\\booking-app\\server\\logs\\winston\\errors\\um-2023-25-11-17-error.log",
+            "hash": "efabfc16428a2212d563249f0f9c8e6afa692570a675849a05c39109431defd7"
         }
     ],
     "hashType": "sha256"
