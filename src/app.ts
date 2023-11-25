@@ -19,9 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/v1', Routes);
 
 // Test
-// app.get('/', (req, res) => {
-//   res.status(200).json({ message: 'Hello' });
-// });
+app.get('/', (req, res) => {
+  res
+    .status(200)
+    .json({ message: 'Wellcome to booking application server...' });
+});
 
 // Global Error Hnadler
 app.use(globalErrorHandler);

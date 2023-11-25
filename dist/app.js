@@ -19,9 +19,11 @@ app.use(express_1.default.urlencoded({ extended: true }));
 // Aplication routes
 app.use('/api/v1', routes_1.default);
 // Test
-// app.get('/', (req, res) => {
-//   res.status(200).json({ message: 'Hello' });
-// });
+app.get('/', (req, res) => {
+    res
+        .status(200)
+        .json({ message: 'Wellcome to booking application server...' });
+});
 // Global Error Hnadler
 app.use(globalErrorHandler_1.default);
 // Not Found Handler
